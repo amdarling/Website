@@ -1,0 +1,254 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    /*background-image: url("bar.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 5px;*/
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: black;
+    /*height: 50px;*/
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: grey;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.active {
+    background-color: #3a3a3a;
+}
+
+#container, #message {
+    margin: 0 auto;
+    width: 400px;
+    padding-bottom: 20px;
+}
+
+.button {
+    position: relative;
+    /*left: 65%;*/
+    margin: 5px;
+    background-color: cadetblue;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    padding: 10px;
+}
+
+#tString {
+    width: 275px;
+}
+
+.navbar .icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .navbar a:not(:first-child), .dropdown .dropbtn {
+        display: none;
+    }
+
+    .navbar a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar.responsive {
+        position: relative;
+    }
+
+    .navbar.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .navbar.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+        .navbar.responsive .dropdown {
+            float: none;
+        }
+
+        .navbar.responsive .ddcontent {
+            position: relative;
+        }
+
+        .navbar.responsive .dropdown .dropbtn {
+            display: block;
+            width: 100%;
+            text-align: left;
+        }
+}
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropbtn {
+    font-size: 17px;
+    border: none;
+    outline: none;
+    color: grey;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    /*height: 50px;*/
+    /*text-align: center;*/
+    /*text-decoration: none;*/
+}
+
+.ddcontent {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.ddcontent a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+
+.ddcontent a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .ddcontent {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3a3a3a;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+.banner {
+    height: 170px;
+    background-color: #cccccc;
+    background-image: linear-gradient(dodgerblue, cadetblue);
+    color: cadetblue
+}
+
+.guide {
+    height: 170px;
+    /*background-color: #cccccc;
+    background-image: linear-gradient(red, darkred);*/
+    padding: 25px 50px;
+}
+
+.words {
+    color: white;
+    padding: 25px 50px;
+}
+
+.article {
+    padding: 10px 50px;
+    margin: 10px;
+    width: 25%;
+    display: inline-block;
+    border-left: 5px solid cadetblue;
+    background-color:azure;
+}
+
+/*#numOne, #numTwo {
+    border: 5px solid red;
+    height: 50px;
+    width: 25px;
+    display: inline-block;
+}*/
+.container {
+    display: flex;
+    margin: 0 auto;
+    width: 150px;
+    padding: 20px;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: space-around;
+    /*border: 2px solid green;*/
+}
+
+.containerFront {
+    display: flex;
+    width: 75%;
+    margin: 20px auto;
+   
+}
+
+.card {
+    border: 5px solid dodgerblue;
+    height: 50px;
+    width: 25px;
+    display: inline-block;
+    margin: 10px;
+}
+
+#back {
+    background-color: dodgerblue;
+}
+
+#front {
+    background-color: white;
+}
+#result {
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.code {
+    margin: 10px;
+    background-color: dimgray;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: Consolas, monaco, monospace;
+    font-weight: bold;
+    color: white;
+}
+.name {
+    color:khaki;
+}
+.attribute {
+    color: lightskyblue;
+}
+
+.newSticker {
+    width: 20vw;
+    height: 20vh;
+}
+
+.test{
+    font-weight: bold;
+}
+
+#luminous {
+    height: 170px;
+    float:right;
+    /*box-shadow: 50px 50px 113px #defeec inset,-50px -50px 110px #defeec inset;*/
+}

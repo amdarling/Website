@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+	Palindrome Test
+</title>
+    <script type="text/javascript" src="lib.js"></script>
+    <link rel="stylesheet" href="StyleSheet.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="Home.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">Tests</button>
+            <div class="ddcontent">
+                <a class="active" href="PalindromeTest.html">Palindrome</a>
+                <a href="HigherLower.html">Higher or Lower</a>
+                <a href="Kapow.html">Kapow</a>
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i></a>
+    </div>
+    <!--<div class="banner">-->
+            <div class="guide">
+                <h1>Palindrome Test</h1>
+                Enter a word into the text box and click to submit to see whether it is a palindrome or not.
+            </div>
+     <!--   </div>-->
+	<div id="container">
+			<p>Please enter word</p>
+			<input type="test" name="testString" id="tString" ><br>
+			<input type="button" class="button" value="Submit" onclick="test()">
+	</div>
+	<div id="message">
+	
+	</div>
+	
+	<script>
+	function test(){
+		var reg = /[\W_]/g;
+		var tStr = document.getElementById("tString").value;
+		var lowerTStr = tStr.toLowerCase().replace(reg, '');
+		var reverseTStr = lowerTStr.split('').reverse().join('');
+		
+		
+		if(tStr == reverseTStr)
+		{
+			var message = document.getElementById("message")
+			message.innerHTML = "Yay! " + tStr + " is a palendrome";
+			message.style.color = 'rgb(0, 255, 0)';
+		}
+		else
+		{
+			var message = document.getElementById("message")
+			message.innerHTML = "Oops, " + tStr + " is not a palendrome";
+			message.style.color = 'rgb(255, 0, 0)';
+		}
+		
+    }
+
+    function myFunction() {
+        var x = document.getElementById("navibar");
+        if (x.className === "navbar") {
+            x.className += " responsive";
+        } else {
+            x.className = "navbar";
+        }
+    }
+	</script>
+</body>
+</html>

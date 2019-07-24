@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="StyleSheet.css">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        </head>
+<body>
+     <div class="navbar">
+        <a href="Home.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">Tests</button>
+            <div class="ddcontent">
+                <a href="PalindromeTest.html">Palindrome</a>
+                <a class="active" href="HigherLower.html">Higher or Lower</a>
+                <a href="Kapow.html">Kapow</a>
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i></a>
+    </div>
+   <!-- <div class="banner">-->
+        <div class="guide">
+            <h1>Higher or Lower</h1>
+            Guess if the second number will be higher or lower than the first number.
+        </div>
+    <!--</div>-->
+    <div class="container" id="hol">
+        <div class="card" id="numOne">>
+               <span>This will be a number</span>
+        </div>
+            <div class="card" id="back">
+                <span v-if="seen">{{ message }}</span>
+            </div> <br />
+                <button v-on:click="higherOrLower('higher')" class="button" id="btnHigh">Higher</button>
+                <button v-on:click="higherOrLower('lower')" class="button" id="btnLow">Lower</button>
+               <!-- <div id="result">-->
+                    <span v-if="seen" id="result">{{ result }}</span> <br />
+                    <button v-if="seen" v-on:click="newCards()" class="button">New Cards</button>
+               <!-- </div>-->
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#hol',
+            data: {
+                message: 'this will also be a number',
+                result: 'this is the result',
+                seen: false
+            },
+            methods: {
+                higherOrLower: function (diff) {
+                    var second = Math.floor(Math.random() * (1 - 10 + 1)) + 10;
+                    var first = numb;
+                    while (second == first) {
+                        second = Math.floor(Math.random() * (1 - 10 + 1)) + 10;
+                    }
+                    this.message = second
+                    this.seen = true
+
+                    if (diff == 'higher') {
+                        if (second > first) {
+                            this.result = 'That is Correct!'
+                        } else {
+                            this.result = 'That is Wrong'
+                        }
+                    } else {
+                        if (second < first) {
+                            this.result = 'That is Correct!'
+                        } else {
+                            this.result = 'That is Wrong'
+                        }
+                    }
+                    document.getElementById("back").id = "front";
+                    var btn = document.getElementById("btnHigh");
+                    var btn2 = document.getElementById("btnLow");
+                    btn.disabled = true;
+                    btn2.disabled = true;
+                },
+                newCards: function () {
+                    numb = getRandomInt();
+                    document.getElementById("numOne").innerHTML = numb;
+                    this.message = "";
+                    document.getElementById("front").id = "back";
+                    this.seen = false;
+                    var btn = document.getElementById("btnHigh");
+                    var btn2 = document.getElementById("btnLow");
+                    btn.disabled = false;
+                    btn2.disabled = false;
+                }
+            }
+        })
+        function getRandomInt() {
+            return Math.floor(Math.random() * (1 - 10 + 1)) + 10;
+        }
+        var numb = getRandomInt()
+        //console.log(numb);
+        document.getElementById("numOne").innerHTML = numb;
+
+        function myFunction() {
+            var x = document.getElementById("navibar");
+            if (x.className === "navbar") {
+                x.className += " responsive";
+            } else {
+                x.className = "navbar";
+            }
+        }
+
+
+    </script>
+</body>
+</html>

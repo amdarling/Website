@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+	Palindrome Test
+</title>
+    <link rel="stylesheet" href="StyleSheet.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="Home.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">Tests</button>
+            <div class="ddcontent">
+                <a href="PalindromeTest.html">Palindrome</a>
+                <a href="HigherLower.html">Higher or Lower</a>
+                <a class="active" href="Kapow.html">Kapow</a>
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i></a>
+    </div>
+    <!--<div class="banner">-->
+        <div class="guide">
+            <h1>KAPOW</h1>
+            Replace the multiples of two numbers of your choice up to 100 with ka and pow.
+        </div>
+    <!--</div>-->
+
+    <div class="container">
+		<p>Please enter two numbers</p>
+		<input type="number" name="first" id="first" ><br>
+        <input type="number" name="second" id="second" ><br>
+		<input type="button" class="button" value="Submit" onclick="replace()">
+	</div>
+    <div id="message" style="white-space: pre-wrap;">
+	
+	</div>
+<script>
+    function myFunction() {
+        var x = document.getElementById("navibar");
+        if (x.className === "navbar") {
+        x.className += " responsive";
+      } else {
+            x.className = "navbar";
+      }
+    }
+
+    function replace() {
+        var numbers = "";
+
+        var f = document.getElementById("first").value;
+        var s = document.getElementById("second").value;
+
+        for (var i = 1; i <= 100; i++)
+        {
+            if (i % f == 0 || i % s == 0) {
+                if (i % f == 0) {
+                    numbers += "KA";
+                }
+                if (i % s == 0) {
+                    numbers += "POW";
+                }
+            
+            }
+            else {
+                numbers += i;
+            }
+            numbers += " \n"
+        }
+
+        var message = document.getElementById("message")
+        message.innerHTML = numbers;
+    }
+</script>
+</body>
+</html>

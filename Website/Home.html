@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Template</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="StyleSheet.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="navbar" id="navibar">
+            <a class="active" href="Home.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Tests</button>
+                <div class="ddcontent">
+                    <a href="PalindromeTest.html">Palindrome</a>
+                    <a href="HigherLower.html">Higher or Lower</a>
+                    <a href="Kapow.html">Kapow</a>
+                </div>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <div class="banner">
+            <img src="circuit.png" id="luminous" />
+            <div class="words">
+                <h1>Darling Designed</h1>
+                Plain html website
+            </div>
+        </div>
+        <div class="containerFront">
+            <div class="article">
+                <h2>Coding Tests</h2>
+                <p><span class="test"> Palindrome Test</span> - Check if a word is a palindrome </p>
+                <p><span class="test">Higher or Lower</span> - Guess if the second card is higher or lower. Uses Vue.js </p>
+                <p><span class="test">Kapow</span> - Replace the multiples of two numbers with ka and pow </p>
+            </div>
+            <div class="article">
+                <h2>More to Come</h2>
+                Working on the CSS styling.
+                <div class="code">
+                    <span class="name">.containerFront</span> { <br />
+                    <span class="attribute">display</span>: flex; <br />
+                    <span class="attribute">width</span>: 75%; <br />
+                    <span class="attribute">margin</span>: 20px auto; <br />
+                    } <br />
+                </div>
+            </div>
+            <div class="article">
+                <h2>Newest</h2>
+                <div class="newSticker">
+                    <svg width="100%" height="100%" viewbox="0 0 100 100"></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+    <script>
+        function myFunction() {
+            var x = document.getElementById("navibar");
+            if (x.className === "navbar") {
+            x.className += " responsive";
+          } else {
+                x.className = "navbar";
+          }
+        }
+
+        var s = Snap('svg');
+        var circle = s.ellipse(-20, 20, 20, 10).attr({
+            fill: 'cadetblue',
+            stroke: 'cadetblue'
+        })
+        for (var num = 0; num < 24; num++) {
+            var rad1 = num * 15 * (Math.PI / 180);
+            var rad2 = (num + 1) * 15 * (Math.PI / 180);
+            var rad3 = (num + .5) * 15 * (Math.PI / 180);
+            var x1 = (20 * (Math.cos(rad1)) + -20)
+            var y1 = (10 * (Math.sin(rad1)) + 20)
+            var x2 = (30 * (Math.cos(rad3)) + -20)
+            var y2 = (20 * (Math.sin(rad3)) + 20)
+            var x3 = (20 * (Math.cos(rad2)) + -20)
+            var y3 = (10 * (Math.sin(rad2)) + 20)
+            var line = s.polyline(x1, y1, x2, y2, x3, y3).attr({
+                'fill': 'cadetblue'
+            })
+        }
+        var text = s.text(-35, 25, 'New').attr({
+            
+            fill: 'black'
+        })
+        var text2 = s.text(20, 25, 'Kapow').attr("font-size", "10px").attr("font-family", "Arial");
+
+</script>
+</body>
+</html>
